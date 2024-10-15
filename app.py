@@ -21,6 +21,15 @@ app.config.suppress_callback_exceptions = True
 
 # Load data from csv
 def load_data():
+    # Primero  cargar el archivo
+    df = pd.read_csv('E:/ANDESDESPLIEGUES1/Archivos-requeridos/datos_energia.csv')
+    
+    # Aahora convertir la columna fehca
+    df['time'] = pd.to_datetime(df['time'])
+    df.set_index('time', inplace=True)
+    
+    return df
+
     # To do: Completar la función 
     
 
